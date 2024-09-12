@@ -24,7 +24,7 @@
 
 ## :scroll: About Latte (ECCV 2024)
 
-**Latte** is a MM-TTA method that leverages esitmated 3D poses to retrieve reliable spatial-temporal voxels for Test-Time Adaptatipn (TTA). The overall structure is as follows.
+**Latte** is an MM-TTA method that leverages estimated 3D poses to retrieve reliable spatial-temporal voxels for Test-Time Adaptation (TTA). The overall structure is as follows.
 
 <p align="middle">
   <img src="figs/Main_Method.jpg" width="600" />
@@ -43,8 +43,8 @@ Please refer to [DATA_PREPARE.md](latte/data/DATA_PREPARE.md) for the data prepa
 
 
 ## :eyes: Updates
-* [2024.09] Installation and data preparation details released. Full realse will be available soon!
-* [2024.08] We are now refactoring our code and code will be available shortly. Stay tunned!
+* [2024.09] Installation and data preparation details released. The full release will be available soon!
+* [2024.08] We are now refactoring our code and code will be available shortly. Stay tuned!
 * [2024.07] Our paper is accepted by ECCV 2024! Check our paper on arxiv [here](https://arxiv.org/abs/2403.06461).
 
 
