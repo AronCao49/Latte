@@ -24,22 +24,35 @@
 
 ## :scroll: About Latte (ECCV 2024)
 
-**Latte** is an MM-TTA method that leverages estimated 3D poses to retrieve reliable spatial-temporal voxels for Test-Time Adaptation (TTA). The overall structure is as follows.
+**Latte** is a MM-TTA method that leverages esitmated 3D poses to retrieve reliable spatial-temporal voxels for Test-Time Adaptatipn (TTA). The overall structure is as follows.
 
 <p align="middle">
   <img src="figs/Main_Method.jpg" width="600" />
 </p>
 
+
+## Installation and Prerequisite
+
+To ease the effort during environment setup, we recommend you leverage [Docker](https://www.docker.com/) and [NVIDIA Container Toolkit](https://docs.nvidia.com/ai-enterprise/deployment-guide-vmware/0.1.0/docker.html). With Docker installed, you can locally build the docker image for Latte using [this Dockerfile](Dockerfile) by running ```docker build -t mopa docker/ ```.
+
+You can then run a container using the docker image. The next step is to install some additional prerequisites. To do so, go to this repo folder and run ```bash install.sh``` within the built container (you may ignore the warning saying some package versions are incompatible).
+
+
+## Dataset Preparation
+Please refer to [DATA_PREPARE.md](latte/data/DATA_PREPARE.md) for the data preparation and pre-processing details.
+
+
 ## :eyes: Updates
-* [2024.08] We are now refactoring our code, which will be available shortly. Stay tuned!
+* [2024.09] Installation and data preparation details released. Full realse will be available soon!
+* [2024.08] We are now refactoring our code and code will be available shortly. Stay tunned!
 * [2024.07] Our paper is accepted by ECCV 2024! Check our paper on arxiv [here](https://arxiv.org/abs/2403.06461).
 
 
 ## :writing_hand: TODO List
 
 - [x] Initial release. :rocket:
-- [ ] Add installation and prerequisite details.
-- [ ] Add data preparation details.
+- [x] Add installation and prerequisite details.
+- [x] Add data preparation details.
 - [ ] Add training details.
 - [ ] Add evaluation details.
 
