@@ -1,0 +1,92 @@
+MODEL_2D:
+  TYPE: "SegFormer"
+  DUAL_HEAD: True
+  NUM_CLASSES: 16
+  CKPT_PATH: "latte/exp/models/0310_nuscenes_usa_singapore_baseline_segformer_3/model_2d_100000.pth"
+  SegFormer:
+    backbone: "mit_b1"
+    # pretrained_path: "latte/models/pretrained/segformer.b1.512x512.ade.160k.pth"
+    decoder_cfg:
+      feature_strides: [4, 8, 16, 32]
+      in_channels: [64, 128, 320, 512]
+      embedding_dim: 256
+      dropout_rate: 0.1
+    test_cfg:
+      mode: 'slide'
+      stride: (300, 300)
+      crop_size: (450, 450)
+MODEL_3D:
+  TYPE: "SPVCNN"
+  DUAL_HEAD: True
+  NUM_CLASSES: 16
+  CKPT_PATH: "latte/exp/models/0310_nuscenes_usa_singapore_baseline_segformer_3/model_3d_100000.pth"
+  SPVCNN:
+    cr: 1.0
+DATASET_SOURCE:
+  TYPE: "NuScenesSCN"
+  TRAIN: ("train_usa",)
+  VAL: ("val_usa",)
+  NuScenesSCN:
+    preprocess_dir: "latte/datasets/nuscenes/preprocess_all/preprocess"
+    nuscenes_dir: "latte/datasets/nuscenes"  # only front cam images are needed
+    resize: (800, 450)
+    augmentation:
+      bottom_crop: (450, 450)
+    merge_classes: False
+DATASET_TARGET:
+  TYPE: "NuScenesSCN"
+  TRAIN: ("train_singapore", "val_singapore", "test_singapore", )
+  VAL: ("val_singapore", )
+  TEST: ("train_singapore", "val_singapore", "test_singapore", )
+  NuScenesSCN:
+    preprocess_dir: "latte/datasets/nuscenes/preprocess_all/preprocess"
+    nuscenes_dir: "latte/datasets/nuscenes"  # only front cam images are needed
+    resize: (800, 450)
+    augmentation:
+      bottom_crop: (450, 450)
+    merge_classes: False
+DATALOADER:
+  NUM_WORKERS: 4
+OPTIMIZER:
+  MODEL_2D:
+    TYPE: "AdamW"
+    BASE_LR: 0.00006
+    WEIGHT_DECAY: 0.01
+    AdamW:
+      param_keys: ("pos_block", "norm", "head")
+      mult_types: (["weight_decay",], ["weight_decay",], ["lr",])
+      mults: (0.0, 0.0, 10)
+  MODEL_3D:
+    TYPE: "Adam"
+    BASE_LR: 0.001
+SCHEDULER:
+  MODEL_2D:
+    TYPE: "MultiStepLR"
+    MultiStepLR:
+      gamma: 0.1
+      milestones: (80000, 90000)
+  MODEL_3D:
+    TYPE: "MultiStepLR"
+    MultiStepLR:
+      gamma: 0.1
+      milestones: (80000, 90000)
+  MAX_ITERATION: 100000
+TRAIN:
+  BATCH_SIZE: 6
+  SUMMARY_PERIOD: 50
+  CHECKPOINT_PERIOD: 5000
+  UPDATE_PARAMS: "norm"
+  RESET_DROPOUT: True
+  LOG_PERIOD: 50
+  CLASS_WEIGHTS: [2.3641641788775596, 4.1075660634735, 2.7513258925085884, 1.7533038096977607, 
+                  3.102818806495627, 4.107767305350824, 3.0140403877688167, 3.310400849233166, 
+                  2.425927564613851, 2.0632704496811014, 1.0, 2.4273694428457273, 
+                  1.6248429776269222, 2.120105741660048, 1.22986685313754, 1.6813995952525278]
+TTA:
+  TYPE: "PSLABEL"
+  PSLABEL:
+    lambda_ps: 1.0
+VAL:
+  BATCH_SIZE: 6
+  PERIOD: 50
+OUTPUT_DIR: "latte/exp/models"  #  @ will be replaced with config path, e.g. nuscenes/usa_singapore/xmuda

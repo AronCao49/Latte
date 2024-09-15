@@ -39,20 +39,26 @@ _C.TTA.LATTE.lambda_hr_23_trg = 0.0
 _C.TTA.LATTE.lambda_hr_32_trg = 0.0
 
 # ---------------------------------------------------------------------------- #
+# MMTTA options
+# ---------------------------------------------------------------------------- #
+_C.TTA.MMTTA = CN()
+
+# ---------------------------------------------------------------------------- #
 # TENT options
 # ---------------------------------------------------------------------------- #
 _C.TTA.TENT = CN()
 _C.TTA.TENT.lambda_tent = 1.0
 _C.TTA.TENT.lambda_pl = 0.0
+_C.TTA.TENT.lambda_xm_trg = 0.0
 
 # ---------------------------------------------------------------------------- #
 # ETA options
 # ---------------------------------------------------------------------------- #
 _C.TTA.ETA = CN()
 _C.TTA.ETA.e_margin = math.log(1000)*0.40
-_C.TTA.ETA.d_margin = 0.005
+_C.TTA.ETA.d_margin = 0.05
 _C.TTA.ETA.lambda_eta = 1.0
-_C.TTA.ETA.lambda_xm_trg = 1.0
+_C.TTA.ETA.lambda_xm_trg = 0.0
 
 # ---------------------------------------------------------------------------- #
 # SAR options
@@ -68,32 +74,6 @@ _C.TTA.SAR.lambda_xm_trg = 0.0
 _C.TTA.PSLABEL = CN()
 _C.TTA.PSLABEL.start_iter = 0
 _C.TTA.PSLABEL.lambda_ps = 0.0
-
-# ---------------------------------------------------------------------------- #
-# COTTA options
-# ---------------------------------------------------------------------------- #
-_C.TTA.COTTA = CN()
-_C.TTA.COTTA.img_scale_ls = [0.25, 0.325, 0.5, 0.625, 0.75, 0.875]
-_C.TTA.COTTA.z_rot_ls = [1.0472, 2.0944, 3.1416, 4.1887, 5.2359]
-_C.TTA.COTTA.lambda_ps = 1.0
-_C.TTA.COTTA.conf_thred = 0.9
-
-# ---------------------------------------------------------------------------- #
-# CoMAC options
-# ---------------------------------------------------------------------------- #
-_C.TTA.COMAC = CN()
-_C.TTA.COMAC.img_scale_ls = [0.25, 0.325, 0.5, 0.625, 0.75, 0.875]
-_C.TTA.COMAC.z_rot_ls = [1.0472, 2.0944, 3.1416, 4.1887, 5.2359]
-_C.TTA.COMAC.load_path = ""
-_C.TTA.COMAC.conf_thre = 0.8
-_C.TTA.COMAC.restore_prob = 0.2
-_C.TTA.COMAC.update_max_len = 200
-_C.TTA.COMAC.restore_max_len = 400
-_C.TTA.COMAC.queue_size = 4096
-_C.TTA.COMAC.lambda_cts_trg = 0.01
-_C.TTA.COMAC.lambda_ps = 1.0
-_C.TTA.COMAC.cont_temp = 10
-_C.TTA.COMAC.queue_thre = 0.8
 
 # ---------------------------------------------------------------------------- #
 # DA options

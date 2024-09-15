@@ -1,0 +1,90 @@
+MODEL_2D:
+  TYPE: "SegFormer"
+  DUAL_HEAD: True
+  NUM_CLASSES: 9
+  CKPT_PATH: "latte/exp/models/0309_synthia_semantic_kitti_baseline_3/model_2d_100000.pth"
+  SegFormer:
+    backbone: "mit_b1"
+    pretrained_path: "latte/models/pretrained/segformer.b1.512x512.ade.160k.pth"
+    decoder_cfg:
+      feature_strides: [4, 8, 16, 32]
+      in_channels: [64, 128, 320, 512]
+      embedding_dim: 256
+      dropout_rate: 0.1
+    test_cfg:
+      mode: 'slide'
+      stride: (230, 230)
+      crop_size: (350, 350)
+MODEL_3D:
+  TYPE: "SPVCNN"
+  DUAL_HEAD: True
+  NUM_CLASSES: 9
+  CKPT_PATH: "latte/exp/models/0309_synthia_semantic_kitti_baseline_3/model_3d_100000.pth"
+  SPVCNN:
+    cr: 1.0
+HR_BLOCK:
+  temp_wd_size: 3
+  max_range: 40
+  voxel_size: 0.3
+  conf_perc: 0.75
+CR_BLOCK:
+  reduction: "mean"
+  conf_mask: True
+  ety_weight: True
+DATASET_SOURCE:
+  TYPE: "SynthiaSCN"
+  TRAIN: ("train",)
+  SynthiaSCN:
+    synthia_dir: "latte/datasets/synthia/RAND_CITYSCAPES"
+DATASET_TARGET:
+  TYPE: "SemanticKITTISCN"
+  TRAIN: ("train","val", "test")
+  VAL: ("train","val", "test")
+  TEST: ("train","val", "test")
+  SemanticKITTISCN:
+    root_dir: "latte/datasets/semantic_kitti"
+    cat_type: "synthia"
+DATALOADER:
+  NUM_WORKERS: 4
+OPTIMIZER:
+  MODEL_2D:
+    TYPE: "AdamW"
+    BASE_LR: 0.00006
+    WEIGHT_DECAY: 0.01
+    AdamW:
+      param_keys: ("pos_block", "norm", "head")
+      mult_types: (["weight_decay",], ["weight_decay",], ["lr",])
+      mults: (0.0, 0.0, 10)
+  MODEL_3D:
+    TYPE: "Adam"
+    BASE_LR: 0.001
+SCHEDULER:
+  MODEL_2D:
+    TYPE: "MultiStepLR"
+    MultiStepLR:
+      gamma: 0.1
+      milestones: (80000, 90000)
+  MODEL_3D:
+    TYPE: "MultiStepLR"
+    MultiStepLR:
+      gamma: 0.1
+      milestones: (80000, 90000)
+  MAX_ITERATION: 100000
+TRAIN:
+  BATCH_SIZE: 4
+  SUMMARY_PERIOD: 50
+  CHECKPOINT_PERIOD: 5000
+  UPDATE_PARAMS: "norm"
+  RESET_DROPOUT: True
+  LOG_PERIOD: 50
+  CLASS_WEIGHTS: [1.4249346118039035, 2.033785464270084, 1.4808241957757777, 1.1006914887609347, 1.088128020864371, 
+                  1.0, 1.2728651577101493, 2.0448017310362028, 2.302622158162727]
+TTA:
+  TYPE: "XMUDA"
+  XMUDA:
+    lambda_xm_trg: 0.1
+    lambda_pl: 0.0
+VAL:
+  BATCH_SIZE: 4
+  PERIOD: 50
+OUTPUT_DIR: "latte/exp/models"  #  @ will be replaced with config path, e.g. nuscenes/usa_singapore/xmuda
