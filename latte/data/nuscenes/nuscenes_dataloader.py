@@ -358,7 +358,6 @@ class NuScenesSCN(NuScenesBase):
             # print(pc_)
             _, inds, inverse = sparse_quantize(
                 pc_,
-                1 / self.scale,
                 return_index=True,
                 return_inverse=True
             )

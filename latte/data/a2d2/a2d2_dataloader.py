@@ -283,7 +283,6 @@ class A2D2SCN(A2D2Base):
             pc_ = coords[idxs]
             # print(pc_)
             _, inds, inverse = sparse_quantize(pc_,
-                                               1 / self.scale,
                                                return_index=True,
                                                return_inverse=True)
             out_dict['coords'] = pc_
