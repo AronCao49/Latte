@@ -7,3 +7,4 @@ pip install --default-timeout=100 openpyxl
 pip install -ve .
 
 pip install --upgrade git+https://github.com/mit-han-lab/torchsparse.git@v1.4.0
+pip install --upgrade git+https://github.com/AronCao49/pypcd.git
