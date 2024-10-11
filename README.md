@@ -93,66 +93,66 @@ After the TTA process, class-wise results will be recorded in the ```*.xlsx``` f
   </tr>
   <tr>
     <td>TENT</td> <td>&#10008</td> 
-    <td>37.0</td> <td>36.9</td> <td bgcolor="grey">42.7</td> 
-    <td>43.2</td> <td>45.2</td> <td bgcolor="grey">48.8</td> 
-    <td>23.8</td> <td><u>35.8</u></td> <td bgcolor="grey"><u>37.7</u></td> 
-    <td bgcolor="grey">43.1</td> 
-  </tr>
-  <tr>
-    <td>ETA</td> <td>&#10008</td>
-    <td>37.0</td> <td>34.9</td> <td bgcolor="grey">44.8</td> 
-    <td>43.2</td> <td>44.1</td> <td bgcolor="grey">50.2</td> 
-    <td>23.9</td> <td>30.8</td> <td bgcolor="grey">33.1</td> 
-    <td bgcolor="grey">42.7</td> 
-  </tr>
-  <tr>
-    <td>SAR</td> <td>&#10008</td>
-    <td>37.0</td> <td>36.2</td> <td bgcolor="grey">45.0</td> 
-    <td>43.2</td> <td>46.0</td> <td bgcolor="grey">50.5</td> 
-    <td>23.3</td> <td>32.3</td> <td bgcolor="grey">34.3</td> 
-    <td bgcolor="grey">43.3</td> 
-  </tr>
-  <tr>
-    <td>SAR-rs</td> <td>&#10008</td>
-    <td>37.0</td> <td>35.5</td> <td bgcolor="grey">45.0</td> 
-    <td>43.2</td> <td>45.0</td> <td bgcolor="grey">50.4</td> 
-    <td>23.7</td> <td>30.7</td> <td bgcolor="grey">33.0</td> 
+    <td>36.8</td> <td>36.5</td> <td bgcolor="grey">42.1</td> 
+    <td>43.3</td> <td>44.4</td> <td bgcolor="grey">49.1</td> 
+    <td>22.4</td> <td><u>35.2</u></td> <td bgcolor="grey"><u>37.3</u></td> 
     <td bgcolor="grey">42.8</td> 
   </tr>
   <tr>
+    <td>ETA</td> <td>&#10008</td>
+    <td>36.8</td> <td>34.2</td> <td bgcolor="grey">43.5</td> 
+    <td>43.2</td> <td>42.4</td> <td bgcolor="grey">49.8</td> 
+    <td>22.4</td> <td>30.6</td> <td bgcolor="grey">32.9</td> 
+    <td bgcolor="grey">42.1</td> 
+  </tr>
+  <tr>
+    <td>SAR</td> <td>&#10008</td>
+    <td>36.7</td> <td>35.7</td> <td bgcolor="grey">43.8</td> 
+    <td>43.2</td> <td>44.5</td> <td bgcolor="grey">50.3</td> 
+    <td>21.1</td> <td>32.2</td> <td bgcolor="grey">34.1</td> 
+    <td bgcolor="grey">42.7</td> 
+  </tr>
+  <tr>
+    <td>SAR-rs</td> <td>&#10008</td>
+    <td>36.7</td> <td>34.8</td> <td bgcolor="grey">43.7</td> 
+    <td>43.3</td> <td>43.1</td> <td bgcolor="grey">49.9</td> 
+    <td>22.2</td> <td>30.6</td> <td bgcolor="grey">32.8</td> 
+    <td bgcolor="grey">42.1</td> 
+  </tr>
+  <tr>
     <td>xMUDA</td> <td>&#10004</td>
-    <td>20.1</td> <td>36.0</td> <td bgcolor="grey">32.7</td> 
-    <td>13.0</td> <td>33.6</td> <td bgcolor="grey">21.3</td> 
-    <td>7.8</td> <td>23.7</td> <td bgcolor="grey">19.5</td> 
-    <td bgcolor="grey">24.5</td> 
+    <td>20.3</td> <td>36.4</td> <td bgcolor="grey">33.6</td> 
+    <td>13.0</td> <td>33.2</td> <td bgcolor="grey">21.3</td> 
+    <td>8.4</td> <td>22.2</td> <td bgcolor="grey">18.9</td> 
+    <td bgcolor="grey">21.6</td> 
   </tr>
   <tr>
     <td>xMUDA+PL</td> <td>&#10004</td>
-    <td>37.1</td> <td>42.0</td> <td bgcolor="grey">46.5</td> 
-    <td>43.2</td> <td>49.0</td> <td bgcolor="grey">51.5</td> 
-    <td>28.3</td> <td>32.9</td> <td bgcolor="grey">34.7</td> 
-    <td bgcolor="grey">44.2</td> 
-  </tr>
-  <tr>
-    <td>MMTTA</td> <td>&#10004</td>
-    <td>37.5</td> <td><b>42.7</b></td> <td bgcolor="grey"><u>46.8</u></td> 
-    <td><u>44.4</u></td> <td><u>50.7</u></td> <td bgcolor="grey"><u>51.9</u></td> 
-    <td>28.0</td> <td>32.8</td> <td bgcolor="grey">34.1</td> 
-    <td bgcolor="grey"><u>44.3</u></td> 
-  </tr>
-  <tr>
-    <td>PsLabel</td> <td>&#10004</td>
-    <td><b>38.3</b></td> <td>37.4</td> <td bgcolor="grey">43.4</td> 
-    <td>43.3</td> <td>48.3</td> <td bgcolor="grey">50.7</td> 
-    <td><u>29.4</u></td> <td>34.4</td> <td bgcolor="grey">36.6</td> 
+    <td>36.5</td> <td>40.8</td> <td bgcolor="grey">45.4</td> 
+    <td>42.7</td> <td>48.3</td> <td bgcolor="grey">50.9</td> 
+    <td>28.2</td> <td>32.6</td> <td bgcolor="grey">34.5</td> 
     <td bgcolor="grey">43.6</td> 
   </tr>
   <tr>
+    <td>MMTTA</td> <td>&#10004</td>
+    <td>37.2</td> <td><b>41.6</b></td> <td bgcolor="grey"><u>45.6</u></td> 
+    <td><u>44.4</u></td> <td><u>50.6</u></td> <td bgcolor="grey"><u>52.3</u></td> 
+    <td>27.3</td> <td>33.5</td> <td bgcolor="grey">34.4</td> 
+    <td bgcolor="grey"><u>44.1</u></td> 
+  </tr>
+  <tr>
+    <td>PsLabel</td> <td>&#10004</td>
+    <td><b>37.7</b></td> <td>35.8</td> <td bgcolor="grey">41.7</td> 
+    <td>42.8</td> <td>47.0</td> <td bgcolor="grey">49.4</td> 
+    <td><u>29.5</u></td> <td>34.2</td> <td bgcolor="grey">36.5</td> 
+    <td bgcolor="grey">42.5</td> 
+  </tr>
+  <tr>
     <td>Latte (Ours)</td> <td>&#10004</td>
-    <td><u>38.0</u></td> <td><u>41.8</u></td> <td bgcolor="grey"><b>47.2</b></td> 
-    <td><b>46.1</b></td> <td><b>53.0</b></td> <td bgcolor="grey"><b>54.2</b></td> 
-    <td><b>32.9</b></td> <td><b>38.9</b></td> <td bgcolor="grey"><b>41.0</b></td> 
-    <td bgcolor="grey"><b>47.5</b></td> 
+    <td><u>37.5</u></td> <td><u>41.0</u></td> <td bgcolor="grey"><b>46.2</b></td> 
+    <td><b>46.0</b></td> <td><b>53.0</b></td> <td bgcolor="grey"><b>54.2</b></td> 
+    <td><b>33.3</b></td> <td><b>39.3</b></td> <td bgcolor="grey"><b>41.7</b></td> 
+    <td bgcolor="grey"><b>47.4</b></td> 
   </tr>
 </table>
 <br>
