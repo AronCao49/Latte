@@ -19,7 +19,7 @@
 <p align="center"><strong> 
     <a href = "https://arxiv.org/abs/2403.06461">&#128196; [Arxiv]</a> | 
     <a href = "https://sites.google.com/view/eccv24-latte">&#128190; [Project Site]</a> |
-    &#128214; [OpenAccess]
+    <a href = "https://link.springer.com/chapter/10.1007/978-3-031-73390-1_14">&#128214; [Springer]
 </strong></p>
 
 ## :scroll: About Latte (ECCV 2024)
