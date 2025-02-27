@@ -17,7 +17,7 @@
 </strong></p>
 
 <p align="center"><strong> 
-    <a href = "https://arxiv.org/abs/2403.06461">&#128196; [Arxiv]</a> | 
+    <a href = "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04076.pdf">&#128196; [OpenAccess]</a> | 
     <a href = "https://sites.google.com/view/eccv24-latte">&#128190; [Project Site]</a> |
     <a href = "https://link.springer.com/chapter/10.1007/978-3-031-73390-1_14">&#128214; [Springer]
 </strong></p>
