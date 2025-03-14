@@ -159,6 +159,7 @@ After the TTA process, class-wise results will be recorded in the ```*.xlsx``` f
 
 
 ## :eyes: Updates
+* [2025.03] Update pose generation instruction.
 * [2024.09] Release pretraining and TTA details. See you in Milan!
 * [2024.09] Installation and data preparation details released. The full release will be available soon!
 * [2024.08] We are now refactoring our code and code will be available shortly. Stay tuned!
