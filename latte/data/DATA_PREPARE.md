@@ -44,4 +44,10 @@ $ python latte/data/synthia/preprocess.py
 ## 5. Poses Preparation
 Poses are estimated by the default setting of [KISS-ICP](https://github.com/PRBonn/kiss-icp). We provide the extracted poses in [google drive](https://drive.google.com/drive/folders/1SkeOBXjtGXZzHDrKC9s_Cdh_N6SS_tdB?usp=sharing). To enalbe the TTA process of Latte, first download the respective poses zip file (e.g., poses.zip for SemanticKITTI), and then decompress the zip file under the link to each dataset (e.g., ```latte/datasets/semantic_kitti/```, and ```latte/datasets/nuscenes/```).
 
+Also, if you prefer generating poses by yourself, you can just leverage our forked version of [KISS-ICP](https://github.com/PRBonn/kiss-icp) (which is modified for more suitable I/O for this work). To do so, first install KISS-ICP using the following command:
+```bash
+$ git clone git+https://github.com/AronCao49/kiss-icp.git && cd kiss-icp && make editable
+```
+Then you can use the ```preproces.py``` for each datasets to generate the estimated poses.
+
 
