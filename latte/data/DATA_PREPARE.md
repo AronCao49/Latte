@@ -46,7 +46,7 @@ Poses are estimated by the default setting of [KISS-ICP](https://github.com/PRBo
 
 Also, if you prefer generating poses by yourself, you can just leverage our forked version of [KISS-ICP](https://github.com/PRBonn/kiss-icp) (which is modified for more suitable I/O for this work). To do so, first install KISS-ICP using the following command:
 ```bash
-$ git clone git+https://github.com/AronCao49/kiss-icp.git && cd kiss-icp && make editable
+$ git clone git@github.com:AronCao49/kiss-icp.git && cd kiss-icp && make editable
 ```
 Then you can use the ```preproces.py``` for each datasets to generate the estimated poses.
 
